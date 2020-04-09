@@ -263,10 +263,12 @@ const Stair = props => {
       parseFloat(props.floormm) / 25.4
     )
 
-  if (parseFloat(props.floormm) >= 152.4 && parseFloat(props.floormm) <= 608.0125){
-    floorThickness = parseFloat(props.floormm) / 25.4;
-  } else {
-    floorThickness = 177.8 / 25.4;
+  if (props.units===false){
+    if (parseFloat(props.floormm) >= 152.4 && parseFloat(props.floormm) <= 608.0125){
+      floorThickness = parseFloat(props.floormm) / 25.4;
+    } else {
+      floorThickness = 177.8 / 25.4;
+    }
   }
 
   let preStairAngle = props.stairAngle >=25 && props.stairAngle <= 45 ? props.stairAngle : 32.5;
